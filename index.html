@@ -6,14 +6,11 @@
     <title>调音师在线工具箱</title>
     <script>
       (function() {
-        // GitHub Pages SPA 路径修复逻辑
-        var segmentCount = 1;
+        // 极致兼容性：如果检测到非根路径访问，强制转为 Hash 路由
         var l = window.location;
-        var p = l.pathname;
-        if (p.indexOf('/Power-Audio/') === 0 && p !== '/Power-Audio/' && !p.match(/\.(js|css|png|jpg|ico)$/)) {
-          // 如果访问的是子路径且不是资源文件，强制重定向到主页并保留路径
-          var path = p.replace('/Power-Audio/', '');
-          l.replace(l.protocol + '//' + l.host + '/Power-Audio/?/' + path + (l.search ? '&' + l.search.slice(1) : '') + l.hash);
+        if (l.pathname !== '/Power-Audio/' && l.pathname !== '/Power-Audio/index.html') {
+          var path = l.pathname.replace('/Power-Audio/', '');
+          l.replace('/Power-Audio/#!/' + path + l.search + l.hash);
         }
       })();
     </script>
@@ -25,18 +22,5 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      // 捕获 wouter 路由可能存在的 base 路径问题
-      (function() {
-        var originalPushState = window.history.pushState;
-        window.history.pushState = function() {
-          var args = Array.prototype.slice.call(arguments);
-          if (args[2] && !args[2].startsWith('/Power-Audio/')) {
-            args[2] = '/Power-Audio' + (args[2].startsWith('/') ? '' : '/') + args[2];
-          }
-          return originalPushState.apply(this, args);
-        };
-      })();
-    </script>
   </body>
 </html>
