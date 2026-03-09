@@ -6,13 +6,16 @@
     <title>调音师在线工具箱</title>
     <script>
       (function() {
-        // 极致兼容性：强制路径对齐
+        // 强制路径修复
         var l = window.location;
-        var p = l.pathname;
-        if (p !== '/Power-Audio/' && p !== '/Power-Audio/index.html' && !p.match(/\.(js|css|png|jpg|ico)$/)) {
-          // 如果不是根路径也不是资源文件，重定向到主页并保留原始路径作为 hash
-          var path = p.replace('/Power-Audio/', '');
-          l.replace('/Power-Audio/#!/' + path + l.search + l.hash);
+        if (l.pathname === '/Power-Audio' || l.pathname === '/Power-Audio/') {
+          // 已经在根路径，不做操作
+        } else if (l.pathname.indexOf('/Power-Audio/') === 0) {
+          // 在子路径下，但不匹配应用路由，强制重定向到根路径并保留路由
+          var path = l.pathname.replace('/Power-Audio/', '');
+          if (!path.match(/\.(js|css|png|jpg|ico)$/)) {
+            l.replace('/Power-Audio/#!/' + path + l.search + l.hash);
+          }
         }
       })();
     </script>
