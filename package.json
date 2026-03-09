@@ -1,0 +1,12 @@
+{
+  "name": "power-audio",
+  "version": "1.0.0",
+  "description": "调音师在线工具箱",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static site, no build needed'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
