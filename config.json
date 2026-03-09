@@ -3,7 +3,8 @@
     "title": "🎛️ POWER 调音师工具箱",
     "subtitle": "一站式音频工程部署平台",
     "description": "在线网站制作V763499701",
-    "version": "3.0"
+    "version": "3.0",
+    "downloadLimit": 5
   },
   "bundles": [
     {

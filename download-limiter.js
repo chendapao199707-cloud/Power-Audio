@@ -1,180 +1,107 @@
-/**
- * 下载限制管理脚本
- * 功能：根据 config.json 中的 dailyDownloadLimit 字段限制每日下载次数
- * 存储：使用 localStorage 记录每个资源的每日下载次数
- * 重置：每天午夜自动重置计数器
- */
-
 (function() {
-  'use strict';
+    // 下载限制核心逻辑
+    const STORAGE_KEY = 'power_audio_download_stats';
+    let dailyLimit = 5; // 默认值，稍后会从 config.json 同步
 
-  const STORAGE_PREFIX = 'download_limit_';
-  const STORAGE_DATE_SUFFIX = '_date';
-
-  /**
-   * 获取今天的日期字符串 (YYYY-MM-DD)
-   */
-  function getTodayDateString() {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const date = String(today.getDate()).padStart(2, '0');
-    return `${year}-${month}-${date}`;
-  }
-
-  /**
-   * 获取资源的下载计数
-   */
-  function getDownloadCount(resourceId) {
-    const key = STORAGE_PREFIX + resourceId;
-    const dateKey = key + STORAGE_DATE_SUFFIX;
-    const today = getTodayDateString();
-    const storedDate = localStorage.getItem(dateKey);
-
-    // 如果日期不匹配，重置计数
-    if (storedDate !== today) {
-      localStorage.setItem(dateKey, today);
-      localStorage.setItem(key, '0');
-      return 0;
+    // 获取今日日期字符串 (YYYY-MM-DD)
+    function getTodayStr() {
+        const now = new Date();
+        return now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0');
     }
 
-    const count = localStorage.getItem(key);
-    return count ? parseInt(count, 10) : 0;
-  }
-
-  /**
-   * 增加下载计数
-   */
-  function incrementDownloadCount(resourceId) {
-    const key = STORAGE_PREFIX + resourceId;
-    const dateKey = key + STORAGE_DATE_SUFFIX;
-    const today = getTodayDateString();
-
-    const currentCount = getDownloadCount(resourceId);
-    localStorage.setItem(dateKey, today);
-    localStorage.setItem(key, String(currentCount + 1));
-  }
-
-  /**
-   * 检查是否可以下载
-   */
-  function canDownload(resourceId, dailyLimit) {
-    // 如果没有设置限制，允许下载
-    if (!dailyLimit || dailyLimit <= 0) {
-      return true;
-    }
-
-    const currentCount = getDownloadCount(resourceId);
-    return currentCount < dailyLimit;
-  }
-
-  /**
-   * 获取剩余下载次数
-   */
-  function getRemainingDownloads(resourceId, dailyLimit) {
-    if (!dailyLimit || dailyLimit <= 0) {
-      return null; // 无限制
-    }
-
-    const currentCount = getDownloadCount(resourceId);
-    return Math.max(0, dailyLimit - currentCount);
-  }
-
-  /**
-   * 拦截所有下载链接
-   */
-  function interceptDownloads() {
-    // 监听所有点击事件
-    document.addEventListener('click', function(event) {
-      const target = event.target;
-
-      // 查找最近的下载链接或按钮
-      let downloadElement = target.closest('[data-download-id]');
-      
-      if (!downloadElement) {
-        // 尝试找到包含 href 的链接
-        const link = target.closest('a[href]');
-        if (link && link.getAttribute('data-download-id')) {
-          downloadElement = link;
+    // 获取或初始化下载统计
+    function getStats() {
+        const stats = localStorage.getItem(STORAGE_KEY);
+        const today = getTodayStr();
+        if (stats) {
+            try {
+                const parsed = JSON.parse(stats);
+                if (parsed.date === today) {
+                    return parsed;
+                }
+            } catch (e) {}
         }
-      }
+        return { date: today, count: 0 };
+    }
 
-      if (downloadElement) {
-        const resourceId = downloadElement.getAttribute('data-download-id');
-        const dailyLimit = parseInt(downloadElement.getAttribute('data-daily-limit') || '0', 10);
+    // 保存统计
+    function saveStats(stats) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+    }
 
-        if (dailyLimit > 0 && !canDownload(resourceId, dailyLimit)) {
-          event.preventDefault();
-          event.stopPropagation();
-
-          const remaining = getRemainingDownloads(resourceId, dailyLimit);
-          const message = remaining === 0 
-            ? `今日下载次数已达上限 (${dailyLimit}次)，请明天再试`
-            : `今日剩余下载次数: ${remaining}`;
-
-          alert(message);
-          return false;
+    // 更新界面展示
+    function updateUI() {
+        const stats = getStats();
+        const remaining = Math.max(0, dailyLimit - stats.count);
+        
+        // 创建或更新剩余次数展示标签
+        let badge = document.getElementById('download-limit-badge');
+        if (!badge) {
+            badge = document.createElement('div');
+            badge.id = 'download-limit-badge';
+            badge.style.cssText = 'position:fixed;bottom:20px;right:20px;background:rgba(0,0,0,0.8);color:#fff;padding:10px 15px;border-radius:12px;font-size:13px;z-index:9999;pointer-events:none;border:1px solid rgba(255,255,255,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.3);font-family:sans-serif;transition:all 0.3s ease;';
+            document.body.appendChild(badge);
         }
+        
+        badge.innerHTML = `📅 今日剩余下载次数: <b style="color:${remaining > 0 ? '#4caf50' : '#ff5252'};font-size:15px;">${remaining}</b> / ${dailyLimit}`;
+        
+        // 如果次数用完，尝试寻找下载链接并置灰（可选增强）
+        if (remaining <= 0) {
+            document.querySelectorAll('a[href*="123pan.cn"]').forEach(a => {
+                a.style.opacity = '0.5';
+                a.style.cursor = 'not-allowed';
+            });
+        }
+    }
 
-        // 允许下载，增加计数
-        incrementDownloadCount(resourceId);
-      }
-    }, true);
-  }
-
-  /**
-   * 更新 UI 显示剩余下载次数
-   */
-  function updateDownloadLimitDisplay() {
-    const elements = document.querySelectorAll('[data-download-id][data-daily-limit]');
-    
-    elements.forEach(element => {
-      const resourceId = element.getAttribute('data-download-id');
-      const dailyLimit = parseInt(element.getAttribute('data-daily-limit') || '0', 10);
-
-      if (dailyLimit > 0) {
-        const remaining = getRemainingDownloads(resourceId, dailyLimit);
-        const limitText = element.getAttribute('data-limit-text-element');
-
-        if (limitText) {
-          const textElement = document.querySelector(limitText);
-          if (textElement) {
-            if (remaining === 0) {
-              textElement.textContent = '(今日已达限制)';
-              textElement.style.color = '#ef4444';
-            } else {
-              textElement.textContent = `(今日剩余: ${remaining}/${dailyLimit})`;
-              textElement.style.color = '#f59e0b';
+    // 拦截下载点击
+    document.addEventListener('click', function(e) {
+        // 查找点击的目标是否为下载链接（123网盘链接）
+        const target = e.target.closest('a');
+        if (target && target.href && (target.href.includes('123pan.cn') || target.href.includes('v.123pan.cn'))) {
+            const stats = getStats();
+            if (stats.count >= dailyLimit) {
+                e.preventDefault();
+                alert(`⚠️ 抱歉，今日免费下载次数已达上限 (${dailyLimit}次)。\n\n请明天再来，或联系管理员获取更多权限。`);
+                return false;
             }
-          }
+            
+            // 确认下载后记录
+            // 注意：由于无法 100% 确认用户是否真的下载成功，这里点击即视为一次下载
+            stats.count += 1;
+            saveStats(stats);
+            updateUI();
         }
-      }
-    });
-  }
+    }, true);
 
-  /**
-   * 初始化
-   */
-  function init() {
-    interceptDownloads();
-    updateDownloadLimitDisplay();
+    // 从 config.json 同步配置
+    function syncConfig() {
+        fetch('config.json?t=' + Date.now()) // 加时间戳防止缓存
+            .then(res => res.json())
+            .then(config => {
+                if (config.site && config.site.downloadLimit) {
+                    dailyLimit = parseInt(config.site.downloadLimit);
+                } else if (config.downloadLimit) {
+                    dailyLimit = parseInt(config.downloadLimit);
+                }
+                updateUI();
+            })
+            .catch(err => {
+                console.error('无法加载下载限制配置:', err);
+                updateUI();
+            });
+    }
 
-    // 每分钟更新一次显示（以防跨越午夜）
-    setInterval(updateDownloadLimitDisplay, 60000);
-  }
-
-  // 页面加载完成后初始化
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-  // 暴露到全局作用域供外部调用
-  window.DownloadLimiter = {
-    canDownload,
-    getRemainingDownloads,
-    getDownloadCount,
-    incrementDownloadCount
-  };
+    // 初始化
+    syncConfig();
+    
+    // 定时刷新 UI（应对 SPA 路由切换和零点重置）
+    setInterval(updateUI, 3000);
+    
+    // 暴露接口供调试
+    window.resetDownloadCount = function() {
+        localStorage.removeItem(STORAGE_KEY);
+        syncConfig();
+        console.log('下载计数已重置');
+    };
 })();
