@@ -4,18 +4,10 @@
     <meta charset="utf-8">
     <title>调音师在线工具箱</title>
     <script type="text/javascript">
-      // GitHub Pages SPA Router
-      // This script handles client-side routing for single-page applications
-      // When GitHub Pages returns a 404, this file is served instead
-      // We then redirect to index.html with the original path as a query parameter
-      
       (function() {
         var l = window.location;
-        // Redirect to index.html with the original path as a query parameter
-        // For example: /Power-Audio/admin -> /Power-Audio/?path=/admin
+        // 核心修复逻辑：将 404 流量导回主页并带上路径信息
         var path = l.pathname.replace('/Power-Audio/', '');
-        if (path === 'Power-Audio' || path === '/Power-Audio') path = '';
-        
         var newUrl = l.protocol + '//' + l.host + '/Power-Audio/?/' + path + (l.search ? '&' + l.search.slice(1) : '') + l.hash;
         l.replace(newUrl);
       })();
