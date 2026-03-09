@@ -1,0 +1,809 @@
+{
+  "site": {
+    "title": "🎛️ POWER 调音师工具箱",
+    "subtitle": "一站式音频工程部署平台",
+    "description": "在线网站制作V763499701",
+    "version": "3.0"
+  },
+  "bundles": [
+    {
+      "id": 1,
+      "name": "轻量化部署",
+      "icon": "⚡",
+      "description": "精选必备工具，适合初学者",
+      "resources": [
+        54,
+        22,
+        26,
+        56,
+        62
+      ]
+    },
+    {
+      "id": 2,
+      "name": "全家桶部署",
+      "icon": "📦",
+      "description": "包含宿主、驱动、VST插件和效果器",
+      "resources": [
+        1,
+        5,
+        40,
+        6
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": 1,
+      "name": "Stuido One7",
+      "category": "宿主软件",
+      "size": 286,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499415",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:20:02.630Z"
+    },
+    {
+      "id": 2,
+      "name": "Studi Pro8",
+      "category": "宿主软件",
+      "size": 428,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499410",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:20:32.122Z"
+    },
+    {
+      "id": 3,
+      "name": "PluginAlliance主程序",
+      "category": "其它工具",
+      "size": 1,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499462",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:22:31.450Z"
+    },
+    {
+      "id": 4,
+      "name": "PluginAlliance激活器",
+      "category": "其它工具",
+      "size": 1,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499458",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:22:51.154Z"
+    },
+    {
+      "id": 5,
+      "name": "高精度插件包（64Bit）",
+      "category": "插件资源",
+      "size": 3400,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499412",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:23:58.400Z"
+    },
+    {
+      "id": 6,
+      "name": "音效助手",
+      "category": "其它工具",
+      "size": 2.2,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499413",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:31:53.920Z"
+    },
+    {
+      "id": 8,
+      "name": "FabFilter激活器",
+      "category": "其它工具",
+      "size": 0,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499455",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:32:35.769Z"
+    },
+    {
+      "id": 9,
+      "name": "MIDI PLUS",
+      "category": "音频驱动",
+      "size": 2.29,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499471",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:34:05.978Z"
+    },
+    {
+      "id": 10,
+      "name": "Black Lion Audio",
+      "category": "音频驱动",
+      "size": 2.29,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499483",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:34:55.773Z"
+    },
+    {
+      "id": 11,
+      "name": "电音助手",
+      "category": "其它工具",
+      "size": 1.05,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499522",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:37:20.223Z"
+    },
+    {
+      "id": 12,
+      "name": "微软运行集合库",
+      "category": "其它工具",
+      "size": 77.39,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499459",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:37:48.284Z"
+    },
+    {
+      "id": 13,
+      "name": "Studio One一键禁网",
+      "category": "其它工具",
+      "size": 2.7,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499464",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:38:14.921Z"
+    },
+    {
+      "id": 14,
+      "name": "小跳线Wdm",
+      "category": "其它工具",
+      "size": 1.05,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499460",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:38:39.582Z"
+    },
+    {
+      "id": 15,
+      "name": "CGII",
+      "category": "VST 插件",
+      "size": 11.57,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499396",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:47:18.819Z"
+    },
+    {
+      "id": 16,
+      "name": "Virtual Mix Rack",
+      "category": "VST 插件",
+      "size": 483,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499389",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:47:42.073Z"
+    },
+    {
+      "id": 17,
+      "name": "Seven Reverb",
+      "category": "VST 插件",
+      "size": 229,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499375",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:48:17.391Z"
+    },
+    {
+      "id": 18,
+      "name": "话筒模拟",
+      "category": "VST 插件",
+      "size": 39.68,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499371",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:48:34.424Z"
+    },
+    {
+      "id": 19,
+      "name": "LUX Sub Bass",
+      "category": "VST 插件",
+      "size": 30.35,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499370",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:49:06.639Z"
+    },
+    {
+      "id": 20,
+      "name": "Mic Mod.",
+      "category": "VST 插件",
+      "size": 8.45,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499369",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:53:42.785Z"
+    },
+    {
+      "id": 21,
+      "name": "FUEL",
+      "category": "VST 插件",
+      "size": 93.98,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499520",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:54:02.626Z"
+    },
+    {
+      "id": 22,
+      "name": "WavesFactory Bundle",
+      "category": "VST 插件",
+      "size": 23.58,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499368",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:54:27.858Z"
+    },
+    {
+      "id": 23,
+      "name": "EDYN",
+      "category": "VST 插件",
+      "size": 111,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499390",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:54:45.345Z"
+    },
+    {
+      "id": 24,
+      "name": "OCS",
+      "category": "VST 插件",
+      "size": 15.79,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499367",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:55:03.961Z"
+    },
+    {
+      "id": 25,
+      "name": "Saturation Knob",
+      "category": "VST 插件",
+      "size": 12.57,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499367",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:55:31.723Z"
+    },
+    {
+      "id": 26,
+      "name": "MixHead",
+      "category": "VST 插件",
+      "size": 38.16,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499392",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:55:49.687Z"
+    },
+    {
+      "id": 27,
+      "name": "TypeA",
+      "category": "VST 插件",
+      "size": 21.49,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499391",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:56:12.797Z"
+    },
+    {
+      "id": 28,
+      "name": "1A Equalizer",
+      "category": "VST 插件",
+      "size": 41,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499366",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:56:30.115Z"
+    },
+    {
+      "id": 29,
+      "name": "Tape",
+      "category": "VST 插件",
+      "size": 35.14,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499388",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T08:57:00.589Z"
+    },
+    {
+      "id": 30,
+      "name": "Rar压缩包",
+      "category": "其它工具",
+      "size": 3.5,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499430",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:08:08.361Z"
+    },
+    {
+      "id": 31,
+      "name": "MeTune",
+      "category": "VST 插件",
+      "size": 230,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499387",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:08:51.615Z"
+    },
+    {
+      "id": 32,
+      "name": "Fresh Air",
+      "category": "VST 插件",
+      "size": 28.3,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499386",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:09:12.245Z"
+    },
+    {
+      "id": 33,
+      "name": "Remix",
+      "category": "VST 插件",
+      "size": 35,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499385",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:09:34.441Z"
+    },
+    {
+      "id": 34,
+      "name": "DSCEQ",
+      "category": "VST 插件",
+      "size": 26,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499384",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:09:55.348Z"
+    },
+    {
+      "id": 35,
+      "name": "Waves | Mv2（jiu113114519）",
+      "category": "VST 插件",
+      "size": 105,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499383",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:10:37.757Z"
+    },
+    {
+      "id": 36,
+      "name": "Waves | Doubler（jiu113114519）",
+      "category": "VST 插件",
+      "size": 105,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499382",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:11:12.667Z"
+    },
+    {
+      "id": 37,
+      "name": "Waves | C4（729420942）",
+      "category": "VST 插件",
+      "size": 178,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499381",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:11:51.981Z"
+    },
+    {
+      "id": 38,
+      "name": "PultronicEQ110P",
+      "category": "VST 插件",
+      "size": 5.06,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499380",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:12:18.331Z"
+    },
+    {
+      "id": 39,
+      "name": "XVOX Pro",
+      "category": "VST 插件",
+      "size": 85,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499379",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:12:40.483Z"
+    },
+    {
+      "id": 40,
+      "name": "禁用杀毒",
+      "category": "VST 插件",
+      "size": 1,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24500167",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T09:13:45.411Z"
+    },
+    {
+      "id": 41,
+      "name": "bx_enhancer",
+      "category": "VST 插件",
+      "size": 8.62,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499378",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:35:59.840Z"
+    },
+    {
+      "id": 42,
+      "name": "bx_digital V3",
+      "category": "VST 插件",
+      "size": 87,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499376",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:36:24.866Z"
+    },
+    {
+      "id": 43,
+      "name": "CraveDsp",
+      "category": "VST 插件",
+      "size": 38.85,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499377",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:36:51.386Z"
+    },
+    {
+      "id": 44,
+      "name": "Maag EQ4",
+      "category": "VST 插件",
+      "size": 32,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499374",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:37:11.486Z"
+    },
+    {
+      "id": 45,
+      "name": "VfxProvoker x64（729420942）",
+      "category": "VST 插件",
+      "size": 23.35,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499373",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:37:39.446Z"
+    },
+    {
+      "id": 46,
+      "name": "The God",
+      "category": "VST 插件",
+      "size": 10,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499364",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:37:55.312Z"
+    },
+    {
+      "id": 47,
+      "name": "Mystic（vst3.cn）",
+      "category": "VST 插件",
+      "size": 343,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499362",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:38:19.408Z"
+    },
+    {
+      "id": 48,
+      "name": "Tube-Tech CL 1B mk II",
+      "category": "VST 插件",
+      "size": 22.19,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499363",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:38:42.660Z"
+    },
+    {
+      "id": 49,
+      "name": "Avalom",
+      "category": "VST 插件",
+      "size": 73.45,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499361",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:39:03.142Z"
+    },
+    {
+      "id": 50,
+      "name": "Mujc",
+      "category": "VST 插件",
+      "size": 5.69,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499360",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:39:19.218Z"
+    },
+    {
+      "id": 51,
+      "name": "VSC-2",
+      "category": "VST 插件",
+      "size": 211,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499359",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:39:37.132Z"
+    },
+    {
+      "id": 52,
+      "name": "Waves | Abbey Road Saturator（729420942）",
+      "category": "VST 插件",
+      "size": 184,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499521",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:40:11.572Z"
+    },
+    {
+      "id": 53,
+      "name": "Antares Vocal De-Esser",
+      "category": "VST 插件",
+      "size": 9.5,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499358",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:40:29.846Z"
+    },
+    {
+      "id": 54,
+      "name": "Millennia TCL-2（729420942）",
+      "category": "VST 插件",
+      "size": 20,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499518",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:40:56.820Z"
+    },
+    {
+      "id": 55,
+      "name": "EQ11P",
+      "category": "VST 插件",
+      "size": 7.3,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499517",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:41:17.418Z"
+    },
+    {
+      "id": 56,
+      "name": "Gain Reduction Deluxe",
+      "category": "VST 插件",
+      "size": 6.8,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499516",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:41:36.338Z"
+    },
+    {
+      "id": 57,
+      "name": "Melodyne",
+      "category": "VST 插件",
+      "size": 40.72,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499357",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:41:57.620Z"
+    },
+    {
+      "id": 58,
+      "name": "SA76",
+      "category": "VST 插件",
+      "size": 33,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499515",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:42:10.964Z"
+    },
+    {
+      "id": 59,
+      "name": "LX480 Complete",
+      "category": "VST 插件",
+      "size": 21,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499355",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:42:28.964Z"
+    },
+    {
+      "id": 60,
+      "name": "TR5 EQ-73（vst6.com）",
+      "category": "VST 插件",
+      "size": 68,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499353",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:43:28.062Z"
+    },
+    {
+      "id": 61,
+      "name": "TR5 White 2A（vst6.com）",
+      "category": "VST 插件",
+      "size": 44,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499511",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:43:54.474Z"
+    },
+    {
+      "id": 62,
+      "name": "True_Iron",
+      "category": "VST 插件",
+      "size": 92,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499352",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:44:24.036Z"
+    },
+    {
+      "id": 63,
+      "name": "SEVERB IR",
+      "category": "VST 插件",
+      "size": 105,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499510",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:44:42.904Z"
+    },
+    {
+      "id": 64,
+      "name": "Canvas Audio 8K",
+      "category": "VST 插件",
+      "size": 113,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499509",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:45:02.206Z"
+    },
+    {
+      "id": 65,
+      "name": "Tubetizer",
+      "category": "VST 插件",
+      "size": 50,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499351",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:45:23.546Z"
+    },
+    {
+      "id": 66,
+      "name": "Waves 14",
+      "category": "VST 插件",
+      "size": 3800,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499405",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:46:05.902Z"
+    },
+    {
+      "id": 67,
+      "name": "BBE",
+      "category": "VST 插件",
+      "size": 14,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499404",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:46:23.388Z"
+    },
+    {
+      "id": 68,
+      "name": "iZotope",
+      "category": "VST 插件",
+      "size": 191,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499402",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:46:44.956Z"
+    },
+    {
+      "id": 69,
+      "name": "AVOX bundle",
+      "category": "VST 插件",
+      "size": 35,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499403",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:47:01.594Z"
+    },
+    {
+      "id": 70,
+      "name": "SSL Native Plug",
+      "category": "VST 插件",
+      "size": 343,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499401",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:47:19.838Z"
+    },
+    {
+      "id": 71,
+      "name": "曼尼·马洛金签名系列（jiu113114519）",
+      "category": "VST 插件",
+      "size": 391,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499406",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:47:47.656Z"
+    },
+    {
+      "id": 72,
+      "name": "Valhalla",
+      "category": "VST 插件",
+      "size": 12,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499399",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:48:07.520Z"
+    },
+    {
+      "id": 73,
+      "name": "FabFilter15",
+      "category": "VST 插件",
+      "size": 50,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499398",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:48:24.894Z"
+    },
+    {
+      "id": 74,
+      "name": "插件联盟（免注册版）",
+      "category": "VST 插件",
+      "size": 653,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499397",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:48:45.512Z"
+    },
+    {
+      "id": 75,
+      "name": "恐龙",
+      "category": "VST 插件",
+      "size": 1500,
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499569",
+      "downloads": 0,
+      "uploadDate": "2026-03-08T15:49:03.500Z"
+    }
+  ],
+  "externalLinks": [
+    {
+      "id": 1,
+      "name": "QQ音乐",
+      "type": "音乐平台",
+      "icon": "🎵",
+      "url": "https://music.qq.com/",
+      "description": "QQ音乐"
+    },
+    {
+      "id": 2,
+      "name": "酷狗音乐",
+      "type": "音乐平台",
+      "icon": "🎶",
+      "url": "https://www.kugou.com/",
+      "description": "酷狗音乐"
+    },
+    {
+      "id": 3,
+      "name": "汽水音乐",
+      "type": "音乐平台",
+      "icon": "🥤",
+      "url": "https://qishuimusic.com/",
+      "description": "汽水音乐"
+    },
+    {
+      "id": 4,
+      "name": "网易云音乐",
+      "type": "音乐平台",
+      "icon": "☁️",
+      "url": "https://music.163.com/",
+      "description": "网易云音乐"
+    },
+    {
+      "id": 5,
+      "name": "火绒安全",
+      "type": "安全软件",
+      "icon": "🔒",
+      "url": "https://www.huorong.cn/",
+      "description": "火绒安全"
+    },
+    {
+      "id": 6,
+      "name": "电音助手",
+      "type": "工具软件",
+      "icon": "🎧",
+      "url": "https://1819526525.v.123pan.cn/1819526525/24499522",
+      "description": "电音助手"
+    },
+    {
+      "id": 7,
+      "name": "直播伴侣",
+      "type": "直播工具",
+      "icon": "📹",
+      "url": "https://example.com/",
+      "description": "直播伴侣"
+    },
+    {
+      "id": 8,
+      "name": "微信",
+      "type": "社交应用",
+      "icon": "💬",
+      "url": "https://weixin.qq.com/",
+      "description": "微信"
+    },
+    {
+      "id": 9,
+      "name": "QQ",
+      "type": "社交应用",
+      "icon": "👥",
+      "url": "https://im.qq.com/",
+      "description": "QQ"
+    },
+    {
+      "id": 10,
+      "name": "抖音",
+      "type": "短视频平台",
+      "icon": "🎬",
+      "url": "https://www.douyin.com/",
+      "description": "抖音"
+    },
+    {
+      "id": 11,
+      "name": "TODESK",
+      "type": "远程控制",
+      "icon": "🖥️",
+      "url": "https://www.todesk.com/download.html",
+      "description": "TODESK远程控制软件"
+    },
+    {
+      "id": 12,
+      "name": "向日葵",
+      "type": "远程控制",
+      "icon": "🌻",
+      "url": "https://www.sunlogin.com/download.html",
+      "description": "向日葵远程控制软件"
+    },
+    {
+      "id": 13,
+      "name": "禁用杀毒",
+      "type": "电脑工具",
+      "icon": "🛡",
+      "url": "https://1819526525.v.123pan.cn/1819526525/24500167",
+      "description": ""
+    }
+  ]
+}
