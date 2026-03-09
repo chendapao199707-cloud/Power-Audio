@@ -6,23 +6,28 @@
     <title>调音师在线工具箱</title>
     <script>
       (function() {
-        // 极致兼容性：强制路径对齐
+        // 彻底解决 GitHub Pages 子路径 404 的逻辑
         var l = window.location;
-        var p = l.pathname;
-        if (p !== '/Power-Audio/' && p !== '/Power-Audio/index.html' && !p.match(/\.(js|css|png|jpg|ico)$/)) {
-          // 如果不是根路径也不是资源文件，重定向到主页并保留原始路径作为 hash
-          var path = p.replace('/Power-Audio/', '');
-          l.replace('/Power-Audio/#!/' + path + l.search + l.hash);
+        // 如果当前路径不是以 #!/ 开头的（SPA 路由），则进行转换
+        if (l.pathname !== '/Power-Audio/' && l.pathname !== '/Power-Audio/index.html') {
+          var path = l.pathname.replace('/Power-Audio/', '');
+          // 只有当路径不为空且不是资源文件时才转换
+          if (path && !path.match(/\.(js|css|png|jpg|ico)$/)) {
+            l.replace('/Power-Audio/#!/' + path + l.search + l.hash);
+          }
         }
       })();
     </script>
     <base href="/Power-Audio/">
-    <script type="module" crossorigin src="/Power-Audio/assets/index-CFDP8i7B.js"></script>
-    <link rel="stylesheet" crossorigin href="/Power-Audio/assets/index-Dh4nSQmJ.css">
-    <script src="/Power-Audio/__manus__/debug-collector.js" defer></script>
-    <script src="/Power-Audio/download-limiter.js" defer></script>
+    <!-- 使用带版本号的资源路径，确保加载最新版本 -->
+    <script type="module" crossorigin src="assets/index-CFDP8i7B.js?v=final"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-Dh4nSQmJ.css?v=final">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // 强制在应用加载前将 wouter 的基础路径对齐
+      window.__WOUTER_BASE__ = "/Power-Audio/";
+    </script>
   </body>
 </html>
