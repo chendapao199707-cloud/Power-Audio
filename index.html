@@ -6,7 +6,7 @@
     <title>调音师在线工具箱</title>
     <script>
       (function() {
-        // 极致兼容性：如果检测到非根路径访问，强制转为 Hash 路由
+        // 如果不是通过 Hash 访问的，强制重定向到 Hash 模式
         var l = window.location;
         if (l.pathname !== '/Power-Audio/' && l.pathname !== '/Power-Audio/index.html') {
           var path = l.pathname.replace('/Power-Audio/', '');
