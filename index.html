@@ -4,22 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>调音师在线工具箱</title>
-    <script>
-      (function() {
-        // GitHub Pages SPA 路由终极修复方案
-        var l = window.location;
-        if (l.pathname !== '/Power-Audio/' && l.pathname !== '/Power-Audio/index.html') {
-          // 如果访问的是子路径，将其转换为 Hash 模式
-          var path = l.pathname.replace('/Power-Audio/', '');
-          if (path && !path.match(/\.(js|css|png|jpg|ico)$/)) {
-            l.replace('/Power-Audio/#/' + path + l.search + l.hash);
-          }
-        }
-      })();
-    </script>
-    <base href="/Power-Audio/">
-    <script type="module" crossorigin src="/Power-Audio/assets/index-CFDP8i7B.js"></script>
-    <link rel="stylesheet" crossorigin href="/Power-Audio/assets/index-Dh4nSQmJ.css">
+    <!-- 移除 GitHub Pages 特殊脚本，恢复标准 SPA 加载 -->
+    <script type="module" crossorigin src="assets/index-CFDP8i7B.js"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-Dh4nSQmJ.css">
+    <script src="__manus__/debug-collector.js" defer></script>
+    <script src="download-limiter.js" defer></script>
   </head>
   <body>
     <div id="root"></div>
