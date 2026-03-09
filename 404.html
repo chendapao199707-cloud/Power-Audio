@@ -1,34 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html>
+  <head>
+    <meta charset="utf-8">
     <title>调音师在线工具箱</title>
-    <script>
-        // GitHub Pages SPA Router
-        // This script handles client-side routing for single-page applications
-        // When GitHub Pages returns a 404, this file is served instead
-        // We then redirect to index.html with the original path as a query parameter
+    <script type="text/javascript">
+      // GitHub Pages SPA Router
+      // This script handles client-side routing for single-page applications
+      // When GitHub Pages returns a 404, this file is served instead
+      // We then redirect to index.html with the original path as a query parameter
+      
+      (function() {
+        var l = window.location;
+        // Redirect to index.html with the original path as a query parameter
+        // For example: /Power-Audio/admin -> /Power-Audio/?path=/admin
+        var path = l.pathname.replace('/Power-Audio/', '');
+        if (path === 'Power-Audio' || path === '/Power-Audio') path = '';
         
-        (function() {
-            var l = window.location;
-            var path = l.pathname;
-            var search = l.search;
-            var hash = l.hash;
-            
-            // Only redirect if we're not already at the root
-            if (path !== '/' && !path.endsWith('/index.html')) {
-                // Redirect to index.html with the original path preserved
-                var newUrl = l.protocol + '//' + l.host + '/Power-Audio/?path=' + 
-                            encodeURIComponent(path) + (search ? '&' + search.substring(1) : '') + hash;
-                l.replace(newUrl);
-            }
-        })();
+        var newUrl = l.protocol + '//' + l.host + '/Power-Audio/?/' + path + (l.search ? '&' + l.search.slice(1) : '') + l.hash;
+        l.replace(newUrl);
+      })();
     </script>
-</head>
-<body>
-    <div id="root"></div>
-    <script type="module" crossorigin src="assets/index-CFDP8i7B.js"></script>
-    <link rel="stylesheet" crossorigin href="assets/index-Dh4nSQmJ.css">
-</body>
+  </head>
+  <body>
+  </body>
 </html>
