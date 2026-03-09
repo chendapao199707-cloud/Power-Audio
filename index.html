@@ -6,19 +6,21 @@
     <title>调音师在线工具箱</title>
     <script>
       (function() {
-        // 如果不是通过 Hash 访问的，强制重定向到 Hash 模式
+        // 极致兼容性：强制路径对齐
         var l = window.location;
-        if (l.pathname !== '/Power-Audio/' && l.pathname !== '/Power-Audio/index.html') {
-          var path = l.pathname.replace('/Power-Audio/', '');
+        var p = l.pathname;
+        if (p !== '/Power-Audio/' && p !== '/Power-Audio/index.html' && !p.match(/\.(js|css|png|jpg|ico)$/)) {
+          // 如果不是根路径也不是资源文件，重定向到主页并保留原始路径作为 hash
+          var path = p.replace('/Power-Audio/', '');
           l.replace('/Power-Audio/#!/' + path + l.search + l.hash);
         }
       })();
     </script>
     <base href="/Power-Audio/">
-    <script type="module" crossorigin src="assets/index-CFDP8i7B.js"></script>
-    <link rel="stylesheet" crossorigin href="assets/index-Dh4nSQmJ.css">
-    <script src="__manus__/debug-collector.js" defer></script>
-    <script src="download-limiter.js" defer></script>
+    <script type="module" crossorigin src="/Power-Audio/assets/index-CFDP8i7B.js"></script>
+    <link rel="stylesheet" crossorigin href="/Power-Audio/assets/index-Dh4nSQmJ.css">
+    <script src="/Power-Audio/__manus__/debug-collector.js" defer></script>
+    <script src="/Power-Audio/download-limiter.js" defer></script>
   </head>
   <body>
     <div id="root"></div>
