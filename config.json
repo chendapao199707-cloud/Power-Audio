@@ -804,6 +804,14 @@
       "icon": "🛡",
       "url": "https://1819526525.v.123pan.cn/1819526525/24500167",
       "description": ""
+    },
+    {
+      "id": 14,
+      "name": "YY语音",
+      "type": "直播工具",
+      "icon": "🐱",
+      "url": "https://www.yy.com/yy8",
+      "description": ""
     }
   ]
 }
