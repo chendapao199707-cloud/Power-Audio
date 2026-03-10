@@ -45,12 +45,16 @@
         
         badge.innerHTML = `📅 今日剩余下载次数: <b style="color:${remaining > 0 ? '#4caf50' : '#ff5252'};font-size:15px;">${remaining}</b> / ${dailyLimit}`;
         
-        if (remaining <= 0) {
-            document.querySelectorAll('a[href*="123pan.cn"]').forEach(a => {
+        // 根据剩余下载次数启用或禁用链接样式
+        document.querySelectorAll('a[href*="123pan.cn"], a[href*="v.123pan.cn"]').forEach(a => {
+            if (remaining <= 0) {
                 a.style.opacity = '0.5';
                 a.style.cursor = 'not-allowed';
-            });
-        }
+            } else {
+                a.style.opacity = '1';
+                a.style.cursor = 'pointer';
+            }
+        });
     }
 
     // 拦截下载点击
@@ -70,12 +74,10 @@
             updateUI();
 
             // 核心修复：解决浏览器拦截“非安全下载”问题
-            // 1. 如果是 http，尝试自动替换为 https
-            let downloadUrl = target.href.replace('http://', 'https://');
-            
-            // 2. 使用新窗口打开链接，而不是直接触发下载，这样可以有效绕过 Chrome 的不安全下载拦截
+            // 即使链接已经是 HTTPS，某些浏览器仍可能出于其他安全策略进行拦截
+            // 使用新窗口打开链接，可以有效绕过 Chrome 等浏览器对不安全下载的直接拦截
             e.preventDefault();
-            window.open(downloadUrl, '_blank');
+            window.open(target.href, '_blank');
             
             return false;
         }
