@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <!-- 强制将不安全的 http 请求升级为 https 以解决浏览器拦截下载问题 -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>调音师在线工具箱</title>
     <!-- 移除 GitHub Pages 特殊脚本，恢复标准 SPA 加载 -->
     <script type="module" crossorigin src="assets/index-CFDP8i7B.js"></script>

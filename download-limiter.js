@@ -45,7 +45,6 @@
         
         badge.innerHTML = `📅 今日剩余下载次数: <b style="color:${remaining > 0 ? '#4caf50' : '#ff5252'};font-size:15px;">${remaining}</b> / ${dailyLimit}`;
         
-        // 如果次数用完，尝试寻找下载链接并置灰（可选增强）
         if (remaining <= 0) {
             document.querySelectorAll('a[href*="123pan.cn"]').forEach(a => {
                 a.style.opacity = '0.5';
@@ -56,7 +55,6 @@
 
     // 拦截下载点击
     document.addEventListener('click', function(e) {
-        // 查找点击的目标是否为下载链接（123网盘链接）
         const target = e.target.closest('a');
         if (target && target.href && (target.href.includes('123pan.cn') || target.href.includes('v.123pan.cn'))) {
             const stats = getStats();
@@ -66,17 +64,26 @@
                 return false;
             }
             
-            // 确认下载后记录
-            // 注意：由于无法 100% 确认用户是否真的下载成功，这里点击即视为一次下载
+            // 记录下载
             stats.count += 1;
             saveStats(stats);
             updateUI();
+
+            // 核心修复：解决浏览器拦截“非安全下载”问题
+            // 1. 如果是 http，尝试自动替换为 https
+            let downloadUrl = target.href.replace('http://', 'https://');
+            
+            // 2. 使用新窗口打开链接，而不是直接触发下载，这样可以有效绕过 Chrome 的不安全下载拦截
+            e.preventDefault();
+            window.open(downloadUrl, '_blank');
+            
+            return false;
         }
     }, true);
 
     // 从 config.json 同步配置
     function syncConfig() {
-        fetch('config.json?t=' + Date.now()) // 加时间戳防止缓存
+        fetch('config.json?t=' + Date.now())
             .then(res => res.json())
             .then(config => {
                 if (config.site && config.site.downloadLimit) {
@@ -92,13 +99,9 @@
             });
     }
 
-    // 初始化
     syncConfig();
-    
-    // 定时刷新 UI（应对 SPA 路由切换和零点重置）
     setInterval(updateUI, 3000);
     
-    // 暴露接口供调试
     window.resetDownloadCount = function() {
         localStorage.removeItem(STORAGE_KEY);
         syncConfig();
